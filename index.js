@@ -1,5 +1,6 @@
 const gitRepoBase = 'https://api.github.com/repos'
-const userURL = 
+const userURL = `${gitRepoBase}/jaredharbison`
+https://github.com/learn-co-curriculum/js-ajax-fetch-lab
 
 
 

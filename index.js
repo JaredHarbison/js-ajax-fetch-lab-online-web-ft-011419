@@ -1,5 +1,5 @@
 const gitRepoBase = 'https://api.github.com/repos'
-const userURL = `${gitRepoBase}/JaredHarbison/js-ajax-fetch-lab;`
+const userURL = `${gitRepoBase}/JaredHarbison/js-ajax-fetch-lab`;
 const resultsEl = document.getElementById('results');
 const issuesEl = document.getElementById('issues');
 
@@ -12,8 +12,15 @@ function getToken() {
 function forkRepo() {
   const repo = 'learn-co-curriculum/js-ajax-fetch-lab';
   //use fetch to fork it!
-  fetch()
-}
+  fetch(`${gitRepoBase}/${repo}/forks`, {
+    method: 'POST', 
+    headers: { 
+      Authorization: `token ${getToken()}`
+    }
+  })
+  .then(res => res.json())
+  .then(data => showResults(data));
+};
 
 function showResults(json) {
   //use this function to display the results from forking via the API

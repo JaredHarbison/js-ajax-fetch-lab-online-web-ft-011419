@@ -1,5 +1,5 @@
 const gitRepoBase = 'https://api.github.com/repos'
-const userURL = `${gitRepoBase}/JaredHarbison/js-ajax-fetch-lab`;
+const userUrl = `${gitRepoBase}/JaredHarbison/js-ajax-fetch-lab`;
 const resultsEl = document.getElementById('results');
 const issuesEl = document.getElementById('issues');
 

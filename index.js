@@ -29,6 +29,21 @@ function showResults(json) {
 
 function createIssue() {
   //use this function to create an issue based on the values input in index.html
+  const postData = {
+    title: document.getElementById("title").value,
+    body: document.getElementById("body").value, 
+  }
+  const title = document.getElementById("title").value;
+  const body = document.getElementById("body").value;
+  fetch( `${userUrl}/issues`, {
+    method: 'POST', 
+    body: JSON.stringify(postData), 
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+  })
+  .then(res => res.json())
+  .then(data => getIssues());
 }
 
 function getIssues() {
